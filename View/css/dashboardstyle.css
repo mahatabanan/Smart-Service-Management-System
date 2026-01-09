@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* PAGE BACKGROUND */
+body {
+    background-color: #e6eef0;
+    color: #1F2933;
+}
+
+/* TOP HEADER */
+.top-header {
+    width: 300px;
+    background: #005f7a;
+    border-radius: 8px;
+    padding: 14px;
+    margin: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: #E6F6FB;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* MAIN DASHBOARD CONTAINER */
+.dashboard-container {
+    display: flex;
+    background: #ffffff;
+    margin: 20px;
+    border-radius: 12px;
+    min-height: 520px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 230px;
+    background-color: #ffffff;
+    border-right: 1px solid #E5E7EB;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* SIDEBAR LINKS */
+.sidebar a {
+    display: block;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #1F2933;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* HOVER */
+.sidebar a:hover {
+    background-color: #E6F6FB;
+    color: #0288B8;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    flex: 1;
+    padding: 50px;
+}
+
+/* WELCOME TEXT */
+.main-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    color: #6B7280;
+    font-size: 16px;
+}
+
+/* INFO LINE */
+.main-content hr {
+    margin: 25px 0;
+    border: none;
+    height: 1px;
+    background-color: #E5E7EB;
+}
+
+/* BUTTON STYLE (Reusable) */
+.btn-primary {
+    background-color: #0288B8;
+    color: #ffffff;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #026F96;
+}
+
+/* RESPONSIVE */
+/*@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #E5E7EB;
+    }
+}
+    */

@@ -1,0 +1,112 @@
+#body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+ 
+/* main card design*/
+#card {
+    width: 380px; 
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+ 
+/* logo and header*/
+#section {
+    margin-bottom: 25px;
+}
+ 
+#logo {
+    width: 120px;
+    height: auto;
+}
+ 
+#brandname {
+    margin: 15px 0 5px;
+    font-size: 22px;
+    color: #333;
+}
+ 
+#tagline {
+    font-size: 13px;
+    color: #888;
+}
+ 
+/* input field group */
+#mgroup, #pgroup {
+    text-align: left;
+    margin-bottom: 15px;
+}
+ 
+#label-num, #labelpass {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #444;
+}
+ 
+#num, #pass {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+ 
+/* ৫. মেইন লগইন বাটন */
+#submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #008CBA; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+ 
+#submit:hover {
+    background-color: #005f7a;
+}
+ 
+/* footer and link design  */
+#footer {
+    margin-top: 25px;
+}
+ 
+#signup-text {
+    font-size: 13px;
+    color: #666;
+    display: flex;         
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;       
+    gap: 5px;              /* for equal space  */
+}
+ 
+/* link design  */
+#signup-link, #forgot-link {
+    text-decoration: none;
+    color: #008CBA;
+    font-weight: bold;
+    transition: 0.3s;
+}
+ 
+#signup-link:hover, #forgot-link:hover {
+    text-decoration: underline;
+    color: #005f7a;
+}
