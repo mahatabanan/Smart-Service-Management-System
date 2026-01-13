@@ -16,7 +16,7 @@ function validateuserform() {
     }
 
     if (password.length < 4) {
-        alert("Password must be at least 3 characters");
+        alert("Password must be at least 4 characters");
         return false; // ফর্ম সাবমিট আটকাবে
     }
     if (name.length < 4) {

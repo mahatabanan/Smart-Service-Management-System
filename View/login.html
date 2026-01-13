@@ -15,7 +15,7 @@
             <p id="tagline">Integrated Solutions for a Smarter World</p>
         </div>
 
-        <form action="../Controller/logincontroller.php" method="POST" id="login-form" aria-placeholder="on">
+        <form action="../Controller/logincontroller.php" method="POST" id="login-form" aria-placeholder="on" onsubmit="return login();">
             <div id="mgroup">
                 <label id="label-num">Mobile No :</label>
                 <input type="number" id="num" name="mobilenumber" placeholder="Enter Mobile Number">
@@ -33,6 +33,6 @@
             </div>
         </form>
     </div>
-
+<script src="../View/js/loginvalidation.js"></script>
 </body>
 </html>
