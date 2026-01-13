@@ -2,6 +2,7 @@ function validateuserform() {
     // ইনপুট ফিল্ড সিলেক্ট করা
     const nameInput = document.getElementById("uname");
     const name = nameInput.value.trim();
+    const password = document.getElementById("pass").value;
 
     // Validation Rules
     if (name === "") {
@@ -9,8 +10,17 @@ function validateuserform() {
         return false; // ফর্ম সাবমিট আটকাবে
     }
 
-    if (name.length < 3) {
-        alert("Name must be at least 3 characters");
+     if (password == "") {
+        alert("Password cannot be empty");
+        return false; // ফর্ম সাবমিট আটকাবে
+    }
+
+    if (password.length < 4) {
+        alert("Password must be at least 3 characters");
+        return false; // ফর্ম সাবমিট আটকাবে
+    }
+    if (name.length < 4) {
+        alert("Name must be at least 4 characters");
         return false; // ফর্ম সাবমিট আটকাবে
     }
 
