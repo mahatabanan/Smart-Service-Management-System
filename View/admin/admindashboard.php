@@ -20,7 +20,7 @@
     <div class="sidebar">
         <div class="logo"><img src="../View/logo/logo.png" height=130 width=150></div>
 
-        <a href="admin_dashboard.php">HOME</a>
+        <a href="../Controller/admindashboardcontroller.php">HOME</a>
 
         <?php if ($user['role'] == 'admin'): ?>
             <a href="#">+ Add Manager</a>
@@ -28,8 +28,8 @@
 
         <a href="#">Service Categories</a>
         <a href="adminview.php">View Users</a>
-        <a href="profile.php">Profile</a>
-        <a href="logout.php">Logout</a>
+        <a href="../Controller/userupdatecontroller.php">Profile Update</a>
+        <a href="../Controller/logoutcontroller.php">Logout</a>
     </div>
 
     <!-- MAIN CONTENT -->

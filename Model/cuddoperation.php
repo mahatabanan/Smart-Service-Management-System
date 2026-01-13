@@ -9,5 +9,13 @@ function countCustomers()
     return $row['total_users'];
 }
 
+function updatename($name,$mobile,$password)
+{
+     global $conn;
+    $sql = "UPDATE users SET name = '$name' ,password='$password' WHERE mobile = '$mobile'";
+    $result=mysqli_query($conn,$sql);
+   return true;
+
+}
 
 ?>

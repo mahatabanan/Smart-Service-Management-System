@@ -7,6 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mobile   = $_POST['mobilenumber'];
     $password = $_POST['Password'];
 
+    if(empty($mobile))
+        {
+           echo"Mobile is Empty";
+           exit;
+        }
     $user = getUserByMobile($mobile);
 
     if (!$user) {
