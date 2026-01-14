@@ -1,7 +1,26 @@
 
-        body { margin: 0; font-family: Arial, sans-serif; background-color: #eef3f4; }
-        .top-header { background-color: #006680; padding: 20px 40px; color: white; font-size: 22px; font-weight: bold; }
-        .profile-container { width: 60%; margin: 60px auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
+        body {
+                 margin: 0; 
+                 font-family: Arial, sans-serif;
+                  background-color: #eef3f4; }
+
+        .top-header {  
+                width: 300px;
+         background: #005f7a;
+        border-radius: 8px;
+        padding: 14px;
+        margin: 20px;
+        font-weight: 600;
+        text-align: center;
+        color: #E6F6FB;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+        .profile-container { 
+                width: 60%; 
+                margin: 60px auto; 
+                background: white; padding: 40px; 
+                border-radius: 10px; 
+                box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
         .profile-container h1 { font-size: 20px; margin-bottom: 15px; color: #003d4d; }
         .profile-container span { color: #444; font-weight: normal; }
         .divider { margin: 25px 0; border-bottom: 1px solid #ddd; }

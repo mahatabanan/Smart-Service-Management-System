@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Model function call to update database
     // Make sure updatename() function exists in your Model file
-    $status = updatename($name, $mobile, $password); 
+    $status = updateuser($name, $mobile, $password); 
 
     if($status){
         // Success: Redirect to Dashboard

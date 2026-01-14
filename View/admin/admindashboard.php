@@ -27,7 +27,7 @@
         <?php endif; ?>
 
         <a href="#">Service Categories</a>
-        <a href="adminview.php">View Users</a>
+        <a href="../Controller/viewuserscontroller.php">View Users</a>
         <a href="../Controller/userupdatecontroller.php">Profile Update</a>
         <a href="../Controller/logoutcontroller.php">Logout</a>
     </div>

@@ -9,13 +9,30 @@ function countCustomers()
     return $row['total_users'];
 }
 
-function updatename($name,$mobile,$password)
+function updateuser($name,$mobile,$password)
 {
      global $conn;
     $sql = "UPDATE users SET name = '$name' ,password='$password' WHERE mobile = '$mobile'";
     $result=mysqli_query($conn,$sql);
    return true;
 
+}
+
+function getAllUsers()
+{
+    global $conn;
+    $sql = "SELECT * FROM users where role='manager'or role='customer'";
+    $result= mysqli_query($conn, $sql);
+    return $result;
+
+}
+
+function deleteUserByMobile($mobile)
+{
+    global $conn;
+    $mobile = mysqli_real_escape_string($conn, $mobile);
+    $sql = "DELETE FROM users WHERE mobile='$mobile'";
+    return mysqli_query($conn, $sql);
 }
 
 ?>
