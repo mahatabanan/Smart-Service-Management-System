@@ -144,12 +144,12 @@
     <div id="card">
 
         <div id="section">
-            <img src="../../View/logo/logo.png" id="logo" alt="Logo">
+            <img src="../View/logo/logo.png" id="logo" alt="Logo">
             <h3>Manager Registration Form </h3>
             
         </div>
 
-        <form action="../../Controller/managercontroller.php" method="post">
+        <form action="../Controller/managercontroller.php" method="post">
 
             <div class="form-group">
                 <label for="manager_name">Manager Name</label>

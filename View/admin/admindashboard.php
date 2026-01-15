@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +24,7 @@
         <a href="../Controller/admindashboardcontroller.php">HOME</a>
 
         <?php if ($user['role'] == 'admin'): ?>
-            <a href="../View/admin/manager_regi_form.html">+ Add Manager</a>
+            <a href="../Controller/managercontroller.php">+ Add Manager</a>
         <?php endif; ?>
 
         <a href="#">Service Categories</a>
@@ -43,7 +44,7 @@
         
         <p><b>Mobile:</b> <?php echo $user['mobile']; ?></p>
         <p><b>Role:</b> <?php echo ucfirst($user['role']); ?></p>
-        <p style="font-weight:bold ;color:orange">Total Active Users :<?php echo "  " .$count ?> </p>
+        <p style="font-weight:bold ;color:orange">Total Customers :<?php echo "  " .$count ?> </p>
     </div>
 
     <div>

@@ -1,11 +1,13 @@
 <?php
 session_start();
 require "../Model/cuddoperation.php";
+
 /* Access control */
 if (!isset($_SESSION['mobile']) || $_SESSION['role'] !== 'admin') {
     header("Location: ../View/login.html");
     exit();
 }
+require "../View/admin/manager_regi_form.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $name     = $_POST['manager_name'];
@@ -28,12 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ";
     exit();
 }
-        /*else {
-            $error = "Registration failed!";
-        }
-
-    } else {
-        $error = "All fields are required!";*/
+       
     }
 
 
