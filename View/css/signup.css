@@ -1,0 +1,68 @@
+/* Page background */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    font-family: Arial, sans-serif;
+}
+
+/* Main card */
+#card {
+    width: 420px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 50px auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+/* Logo section */
+#section {
+    margin-bottom: 15px;
+}
+
+#logo {
+    width: 120px;
+}
+
+/* Headings */
+h3 {
+    margin: 10px 0 5px;
+}
+
+p {
+    margin: 0 0 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Labels */
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* All input fields (Name, Email, Phone, Address) */
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 6px;
+    box-sizing: border-box;
+}
+
+/* Submit button */
+input[type="submit"] {
+    width: 100%;
+    margin-top: 25px;
+    background-color: #0b78a5;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
