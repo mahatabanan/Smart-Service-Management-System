@@ -149,7 +149,11 @@
             
         </div>
 
-        <form action="../Controller/addmanagercontroller.php" method="post">
+              <form action="../Controller/addmanagercontroller.php"
+                method="post"
+               onsubmit="return validateManagerForm()" 
+                novalidate >
+
 
             <div class="form-group">
                 <label for="manager_name">Manager Name</label>
@@ -177,6 +181,9 @@
         <!--<div class="footer-text">
             Already have an account? <a href="login.php">Login</a>
         </div>-->
+
+
+       <script src="../View/js/manager_regi_form.js"></script>
 
 
     </div>
