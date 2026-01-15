@@ -149,7 +149,7 @@
             
         </div>
 
-        <form action="../Controller/managercontroller.php" method="post">
+        <form action="../Controller/addmanagercontroller.php" method="post">
 
             <div class="form-group">
                 <label for="manager_name">Manager Name</label>

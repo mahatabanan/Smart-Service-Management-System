@@ -24,7 +24,7 @@
         <a href="../Controller/admindashboardcontroller.php">HOME</a>
 
         <?php if ($user['role'] == 'admin'): ?>
-            <a href="../Controller/managercontroller.php">+ Add Manager</a>
+            <a href="../Controller/addmanagercontroller.php">+ Add Manager</a>
         <?php endif; ?>
 
         <a href="#">Service Categories</a>
