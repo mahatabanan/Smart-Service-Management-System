@@ -6,19 +6,40 @@
     <title>Manager Registration</title>
 
     <style>
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
         /* Page background */
         body {
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
+            background-color: #e6eef0;
             font-family: Arial, sans-serif;
         }
 
+        /* TOP HEADER */
+.top-header {
+    width: 300px;
+    background: #005f7a;
+    border-radius: 8px;
+    padding: 14px;
+    margin: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: #E6F6FB;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
         /* Main card */
         #card {
-            width: 420px;
+            width: 550px;
             background-color: #ffffff;
-            padding: 25px;
+            padding: 30px;
             border-radius: 15px;
             margin: 50px auto;
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
@@ -117,7 +138,9 @@
     </style>
 </head>
 <body>
-
+   <div class="top-header">
+    <h2>+ADD Manager</h2>
+   </div>
     <div id="card">
 
         <div id="section">
@@ -148,12 +171,13 @@
                 <input type="password" id="password" name="password" placeholder="Enter password" required>
             </div>
 
-            <button type="submit" class="submit-btn">Register</button>
+            <button type="submit" class="submit-btn">Add Manager</button>
         </form>
 
-        <div class="footer-text">
+        <!--<div class="footer-text">
             Already have an account? <a href="login.php">Login</a>
-        </div>
+        </div>-->
+
 
     </div>
 

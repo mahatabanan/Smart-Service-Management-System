@@ -23,7 +23,7 @@
         <a href="../Controller/admindashboardcontroller.php">HOME</a>
 
         <?php if ($user['role'] == 'admin'): ?>
-            <a href="#">+ Add Manager</a>
+            <a href="../View/admin/manager_regi_form.html">+ Add Manager</a>
         <?php endif; ?>
 
         <a href="#">Service Categories</a>

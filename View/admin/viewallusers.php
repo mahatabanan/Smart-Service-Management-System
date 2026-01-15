@@ -6,7 +6,15 @@
 
     <style>
 
-        h2{
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+        .top-header{
              width: 300px;
     background: #005f7a;
     border-radius: 8px;
@@ -55,7 +63,9 @@
 </head>
 <body>
 
+<div class="top-header">
 <h2>All User Details</h2>
+</div>
 <div class="container">
 <table>
     <tr>
