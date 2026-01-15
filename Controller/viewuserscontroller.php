@@ -3,7 +3,7 @@ session_start();
 include "../Model/cuddoperation.php";
 
 /* Access control */
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+if (!isset($_SESSION['mobile']) || $_SESSION['role'] !== 'admin') {
     header("Location: ../View/login.html");
     exit();
 }

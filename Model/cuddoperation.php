@@ -45,4 +45,16 @@ function insertcustomer($name,$password,$mobile,$address,$role)
 
 }
 
+
+function insertmanager($name,$password,$mobile,$address,$role)
+{
+    global $conn;
+    $sql = "INSERT INTO users (name, mobile, password, address,role)
+    VALUES ('$name', '$mobile', '$password', '$address','$role')";
+    $result=mysqli_query($conn,$sql);
+    return $result;
+
+}
+
+
 ?>
