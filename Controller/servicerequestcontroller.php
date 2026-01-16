@@ -10,13 +10,14 @@ require "../Model/cuddoperation.php";
 if (!isset($_SESSION['mobile']) || $_SESSION['role'] !== 'customer') {
     header("Location: ../View/login.html");
     exit();
+    
 }
+$mobile=$_SESSION['mobile'];
        //
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Collect & sanitize
     $fullname       = trim($_POST['customer_name'] ?? '');
-    $mobile         = trim($_POST['mobile_number'] ?? '');
     $servicetypeArr = $_POST['service_type'] ?? [];
     $description    = trim($_POST['problem_description'] ?? '');
     $serviceaddress = trim($_POST['service_address'] ?? '');
@@ -37,11 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     // Mobile
-    if ($mobile === '') {
+   /* if ($mobile === '') {
         $errors[] = "Mobile number is required";
     } elseif (!preg_match('/^01[0-9]{9}$/', $mobile)) {
         $errors[] = "Invalid mobile number format";
-    }
+    }*/
 
     // Service type (checkbox)
     if (empty($servicetypeArr)) {
@@ -79,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $servicetype = implode(", ", $servicetypeArr);
 
 
-    /* --------  database ionsert -------- */
+    /* --------  database insert -------- */
     $statusInsert = insertservicerequest(
         $mobile,
         $fullname,

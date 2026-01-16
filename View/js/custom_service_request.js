@@ -1,8 +1,9 @@
 function validateForm() {
     
+    
     // clear errors
     document.getElementById("nameError").innerHTML = "";
-    document.getElementById("mobileError").innerHTML = "";
+    //document.getElementById("mobileError").innerHTML = "";
     document.getElementById("serviceError").innerHTML = "";
     document.getElementById("problemError").innerHTML = "";
     document.getElementById("addressError").innerHTML = "";
@@ -16,16 +17,16 @@ function validateForm() {
     }
 
     // MOBILE
-    let mobile = document.getElementById("mobile_number").value.trim();
-    let mobilePattern = /^01[0-9]{9}$/;
+    //let mobile = document.getElementById("mobile_number").value.trim();
+    //let mobilePattern = /^01[0-9]{9}$/;
 
-    if (mobile === "") {
+    /*if (mobile === "") {
         document.getElementById("mobileError").innerHTML = "Mobile number is required";
         return false;
     } else if (!mobilePattern.test(mobile)) {
         document.getElementById("mobileError").innerHTML = "Invalid Bangladeshi mobile number";
         return false;
-    }
+    }*/
 
     // SERVICE TYPE
     let services = document.querySelectorAll('input[name="service_type[]"]:checked');
@@ -56,5 +57,6 @@ function validateForm() {
     }
 
     return true;
+    
 
 }

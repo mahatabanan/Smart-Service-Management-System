@@ -81,9 +81,7 @@ input[type="radio"]{
 
 /* TWO COLUMN */
        .two-col{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -141,14 +139,14 @@ button:hover{
                         <small id="nameError" class="error"></small>
             </div>
 
-            <div>
+            <!--<div>
                 <h4><label for="mobile_number">Mobile Number</label></h4>
                 <input type="tel" id="mobile_number" name="mobile_number"
                        placeholder="01XXXXXXXXX"
                         required>
 
                         <small id="mobileError" class="error"></small>
-            </div>
+            </div>-->
         </div>
 
         <!-- SERVICE TYPE -->
