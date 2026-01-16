@@ -124,11 +124,11 @@ button:hover{
 
     <!-- LOGO -->
         <div id="section">
-            <img src="logo.png" id="logo" alt="Logo">
+            <img src="../../View/logo/logo.png" id="logo" alt="Logo">
         </div>
 
     <!-- FORM -->
-    <form action="" method="POST" onsubmit="return validateForm()" novalidate>
+    <form action="../../Controller/servicerequestcontroller.php" method="POST" onsubmit="return validateForm()" novalidate>
 
 
         <!-- NAME + MOBILE -->
@@ -229,7 +229,7 @@ button:hover{
     </form>
 
        <!-- JS validation file -->
-<script src="create_service_request.js"></script>
+<script src="../../View/js/custom_service_request.js"></script>
 </div>
 
 </body>

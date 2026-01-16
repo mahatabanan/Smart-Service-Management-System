@@ -1,7 +1,5 @@
 function validateForm() {
-
-    let ok = true;
-
+    
     // clear errors
     document.getElementById("nameError").innerHTML = "";
     document.getElementById("mobileError").innerHTML = "";
@@ -14,7 +12,7 @@ function validateForm() {
     let name = document.getElementById("customer_name").value.trim();
     if (name === "") {
         document.getElementById("nameError").innerHTML = "Name is required";
-        ok = false;
+        return false;
     }
 
     // MOBILE
@@ -23,39 +21,40 @@ function validateForm() {
 
     if (mobile === "") {
         document.getElementById("mobileError").innerHTML = "Mobile number is required";
-        ok = false;
+        return false;
     } else if (!mobilePattern.test(mobile)) {
         document.getElementById("mobileError").innerHTML = "Invalid Bangladeshi mobile number";
-        ok = false;
+        return false;
     }
 
     // SERVICE TYPE
     let services = document.querySelectorAll('input[name="service_type[]"]:checked');
     if (services.length === 0) {
         document.getElementById("serviceError").innerHTML = "Select at least one service";
-        ok = false;
+      return false;
     }
 
     // PROBLEM
     let problem = document.getElementById("problem_description").value.trim();
     if (problem === "") {
         document.getElementById("problemError").innerHTML = "Describe your problem";
-        ok = false;
+        return false;
     }
 
     // ADDRESS
     let address = document.getElementById("service_address").value.trim();
     if (address === "") {
         document.getElementById("addressError").innerHTML = "Service address is required";
-        ok = false;
+        return false;
     }
 
     // TIME
     let time = document.getElementById("preferred_time").value;
     if (time === "") {
         document.getElementById("timeError").innerHTML = "Select preferred time";
-        ok = false;
+        return false;
     }
 
-    return ok;
+    return true;
+
 }
