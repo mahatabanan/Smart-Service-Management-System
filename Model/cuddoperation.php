@@ -90,4 +90,31 @@ function getUserByMobile($mobile)
 }
 
 
+
+// Count total pending service requests for showing manager dashboard 
+function countPendingRequests()
+{
+    global $conn;
+    $sql = "SELECT COUNT(*) AS total FROM servicerequest WHERE status='Pending'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    return $row['total'];
+}
+
+
+
+      // this part stating work when manager assign worker for service 
+     // Count total completed service requests
+
+   /*  function countCompletedRequests()
+    {
+    global $conn;
+    $sql = "SELECT COUNT(*) AS total FROM servicerequest WHERE status='Completed'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    return $row['total'];
+       }*/
+
+
+
 ?>
