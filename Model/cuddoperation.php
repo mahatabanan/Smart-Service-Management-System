@@ -54,6 +54,28 @@ function insertmanager($name,$password,$mobile,$address,$role)
     $result=mysqli_query($conn,$sql);
     return $result;
 
+} 
+
+// this sql for customer servive request.php  page er 
+function insertservicerequest(
+    $mobile,
+    $fullname,
+    $servicetype,
+    $serviceaddress,
+    $description,
+    $date,
+    $time,
+    $urgency,
+    $status
+) {
+    global $conn;
+
+    $sql = "INSERT INTO servicerequest
+            (mobile, fullname, servicetype, serviceaddress, description, date, time, urgency, status)
+            VALUES
+            ('$mobile', '$fullname', '$servicetype', '$serviceaddress', '$description', '$date', '$time', '$urgency', '$status')";
+
+    return mysqli_query($conn, $sql);
 }
 
 
