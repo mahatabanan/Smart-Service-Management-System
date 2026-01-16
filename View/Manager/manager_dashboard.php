@@ -139,11 +139,18 @@
         <!-- DASHBOARD INFO -->
         <h3>Dashboard Overview</h3>
 
-        <ul>
-            <li>Total Assigned Requests</li>
-            <li>Pending Requests</li>
-            <li>Completed Requests</li>
-        </ul>
+
+        <p style="font-weight:bold; color:orange">
+             Total Customers : <?php echo $count; ?>
+        </p>
+
+
+        <p style="font-weight:bold; color:orange">Total Pending Requests : <b><?php echo $pendingRequests; ?></b></p>
+      
+
+       <!-- <p style="font-weight:bold; color:orange">Completed Requests : 
+            <b><?php echo $completedRequests; ?></b></p>-->
+        
 
     </div>
 
