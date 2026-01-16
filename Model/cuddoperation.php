@@ -79,4 +79,15 @@ function insertservicerequest(
 }
 
 
+
+//// This function retrieves logged-in user data from users table
+function getUserByMobile($mobile)
+{
+    global $conn;
+    $sql = "SELECT name, mobile FROM users WHERE mobile='$mobile'";
+    $result = mysqli_query($conn, $sql);
+    return mysqli_fetch_assoc($result);
+}
+
+
 ?>
