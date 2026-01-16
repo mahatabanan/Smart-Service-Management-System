@@ -11,6 +11,7 @@ if (!isset($_SESSION['mobile'])) {
 }
 
 $mobile = $_SESSION['mobile'];
+$role = $_SESSION['role'];
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -31,18 +32,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Invalid Password: Name must be at least 4 characters.");
     }
 
+
     
     $status = updateuser($name, $mobile, $password); 
 
     if($status){
 
         sleep("2");
+        if ($_SESSION['role'] === 'admin') {
+        header("Location: admindashboardcontroller.php");
+        exit();
+
+    } elseif ($_SESSION['role'] === 'manager') {
+        header("Location: managerdashboardcontroller.php");
+        exit();
+
+    } elseif ($_SESSION['role'] === 'customer') {
         header("Location: customerdashboardcontroller.php");
         exit();
+
     } else {
-        echo "Update Failed!";
+        // fallback (just in case)
+        header("Location: ../View/login.php");
+        exit();
     }
+
+} 
+
+else 
+
+{
+    echo "Update Failed!";
 }
+}
+
+
 
 
 $user = getUserByMobile($mobile);

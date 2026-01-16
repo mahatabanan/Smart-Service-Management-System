@@ -9,14 +9,24 @@ function countCustomers()
     return $row['total_users'];
 }
 
-function updateuser($name,$mobile,$password)
+function updateuser($name, $mobile, $password)
 {
-     global $conn;
-    $sql = "UPDATE users SET name = '$name' ,password='$password' WHERE mobile = '$mobile'";
-    $result=mysqli_query($conn,$sql);
-   return true;
+    global $conn;
 
+    $sql = "UPDATE users 
+            SET name = '$name', password = '$password' 
+            WHERE mobile = '$mobile'";
+
+    mysqli_query($conn, $sql);
+
+    // 🔥 check if any row actually updated
+    if (mysqli_affected_rows($conn) > 0) {
+        return true;   // mobile found & updated
+    } else {
+        return false;  // wrong mobile OR no change
+    }
 }
+
 
 function getAllUsers()
 {
@@ -126,6 +136,22 @@ function deleterequest($requestid)
     $row = mysqli_fetch_assoc($result);
     return $row['total'];
        }
+
+
+    function updatepass($mobile, $newPassword)
+{
+    global $conn;
+
+    $sql = "UPDATE users SET password='$newPassword' WHERE mobile='$mobile'";
+    mysqli_query($conn, $sql);
+
+    // 🔥 IMPORTANT: check affected rows
+    if (mysqli_affected_rows($conn) > 0) {
+        return true;   // mobile found & password updated
+    } else {
+        return false;  // mobile not found OR no change
+    }
+}
 
 
 

@@ -124,7 +124,7 @@
         <a href="#">Home</a>
         <a href="#">View Service Requests</a>
         <a href="#">Assigned Requests</a>
-        <a href="#">Profile</a>
+        <a href="../Controller/userupdatecontroller.php">Profile</a>
         <a href="../Controller/logoutcontroller.php">Logout</a>
     </div>
 
