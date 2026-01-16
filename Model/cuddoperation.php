@@ -78,6 +78,15 @@ function insertservicerequest(
     return mysqli_query($conn, $sql);
 }
 
+function getallfromservicereq($mobile)
+{
+    global $conn;
+    $sql = "SELECT * FROM servicerequest where mobile='$mobile'";
+    $result= mysqli_query($conn, $sql);
+    return $result;
+
+}
+
 
 
 //// This function retrieves logged-in user data from users table
