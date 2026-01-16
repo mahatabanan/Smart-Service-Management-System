@@ -56,7 +56,7 @@ function insertmanager($name,$password,$mobile,$address,$role)
 
 } 
 
-// this sql for customer servive request.php  page er 
+// this sql for customer's service_request 
 function insertservicerequest(
     $mobile,
     $fullname,
