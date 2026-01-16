@@ -2,12 +2,16 @@
 session_start();
 require "../Model/cuddoperation.php";
 
+
+
+
+       
 /* Access control */
 if (!isset($_SESSION['mobile']) || $_SESSION['role'] !== 'customer') {
     header("Location: ../View/login.html");
     exit();
 }
-
+       //
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Collect & sanitize
@@ -23,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $errors = [];
 
-    /* -------- PHP VALIDATION -------- */
+    /* --------php validation  -------- */
 
     // Full name
     if ($fullname === '') {
@@ -71,10 +75,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit();
     }
 
-    /* -------- DATA PREP -------- */
+    /* -------- service type  array to string . so there use implode  -------- */
     $servicetype = implode(", ", $servicetypeArr);
 
-    /* -------- DATABASE INSERT -------- */
+
+    /* --------  database ionsert -------- */
     $statusInsert = insertservicerequest(
         $mobile,
         $fullname,
