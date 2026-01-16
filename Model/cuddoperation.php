@@ -66,14 +66,16 @@ function insertservicerequest(
     $date,
     $time,
     $urgency,
-    $status
+    $status,
+    $worker
+
 ) {
     global $conn;
 
     $sql = "INSERT INTO servicerequest
-            (mobile, fullname, servicetype, serviceaddress, description, date, time, urgency, status)
+            (mobile, fullname, servicetype, serviceaddress, description, date, time, urgency, status,worker)
             VALUES
-            ('$mobile', '$fullname', '$servicetype', '$serviceaddress', '$description', '$date', '$time', '$urgency', '$status')";
+            ('$mobile', '$fullname', '$servicetype', '$serviceaddress', '$description', '$date', '$time', '$urgency', '$status','$worker')";
 
     return mysqli_query($conn, $sql);
 }
@@ -90,14 +92,6 @@ function getallfromservicereq($mobile)
 
 
 //// This function retrieves logged-in user data from users table
-function getUserByMobile($mobile)
-{
-    global $conn;
-    $sql = "SELECT name, mobile FROM users WHERE mobile='$mobile'";
-    $result = mysqli_query($conn, $sql);
-    return mysqli_fetch_assoc($result);
-}
-
 
 
 // Count total pending service requests for showing manager dashboard 
@@ -110,19 +104,28 @@ function countPendingRequests()
     return $row['total'];
 }
 
+function deleterequest($requestid)
+{
+    global $conn;
+    $sql = "DELETE FROM servicerequest WHERE requestid='$requestid'";
+    
+    return mysqli_query($conn, $sql);
+}
+
+
 
 
       // this part stating work when manager assign worker for service 
      // Count total completed service requests
 
-   /*  function countCompletedRequests()
+   function countCompletedRequests()
     {
     global $conn;
-    $sql = "SELECT COUNT(*) AS total FROM servicerequest WHERE status='Completed'";
+    $sql = "SELECT COUNT(*) AS total FROM servicerequest WHERE status='Accepted'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     return $row['total'];
-       }*/
+       }
 
 
 

@@ -1,9 +1,7 @@
 
-
- 
-
 <?php
 session_start();
+require "../Model/user.php";
 require "../Model/cuddoperation.php";
 
 /* Access control */
@@ -26,7 +24,7 @@ $user = getUserByMobile($mobile);
   $pendingRequests  = countPendingRequests();
 
 //Count Complete pending request 
-//$completedRequests  = countCompletedRequests();
+$completedRequests  = countCompletedRequests();
 
 /* Load dashboard view */
 require "../View/Manager/manager_dashboard.php";

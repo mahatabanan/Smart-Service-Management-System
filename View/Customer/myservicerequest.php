@@ -36,6 +36,7 @@
             border: 1px solid #72bdefff;
             padding: 10px;
             text-align: left;
+    
         }
         th {
             background: #005f7a;
@@ -53,7 +54,7 @@
 
 
         .container
-         { width: 80%; 
+         { width: 95%; 
          margin: 40px auto;
           background:white;
          padding: 30px; 
@@ -70,29 +71,46 @@
 <div class="container">
 <table>
     <tr>
-        <th>Request ID</th>
+        <!--<th>Request ID</th>-->
         <th>Service Type</th>
         <th>Service Address</th>
         <th>Date</th>
         <th>Time</th>
         <th>Urgency</th>
+         <th>Assigned Worker Details</th>
         <th>Status</th>
-        <th>Action</th>
+         <th>Action</th>
     </tr>
 
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
         <tr>
-           <td><?= $row['requestid']; ?></td>
+           <!--<td><?= $row['requestid'];  ?></td>-->
             <td><?= $row['servicetype']; ?></td>
             <td><?= $row['serviceaddress']; ?></td>
             <td><?= $row['date']; ?></td>
             <td><?= $row['time']; ?></td>
             <td><?= $row['urgency']; ?></td>
-            <td><?= $row['status']; ?></td>
-        
             <td>
+                <?= $row['worker']; ?>
+            </td>
+            
+            <td>
+    <span style="
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 6px;
+        
+        color: white;
+        cursor: pointer;
+        background-color: <?= ($row['status'] === 'Accepted') ? '#2ecc71' : '#e74c3c'; ?>;
+    ">
+        <?= $row['status']; ?>
+    </span>
+</td>
+
+          <td>
                 <a class="btn delete"
-                   href="../Controller/userdeletecontroller.php?mobile=<?= $row['mobile']; ?>"
+                   href="../Controller/requestdeletecontroller.php?requestid=<?= $row['requestid']; ?>"
                    onclick="return confirm('Are you sure?');">
                     Delete
                 </a>

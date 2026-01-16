@@ -148,8 +148,8 @@
         <p style="font-weight:bold; color:orange">Total Pending Requests : <b><?php echo $pendingRequests; ?></b></p>
       
 
-       <!-- <p style="font-weight:bold; color:orange">Completed Requests : 
-            <b><?php echo $completedRequests; ?></b></p>-->
+        <p style="font-weight:bold; color:orange">Completed Requests : 
+            <b><?php echo $completedRequests; ?></b></p>
         
 
     </div>

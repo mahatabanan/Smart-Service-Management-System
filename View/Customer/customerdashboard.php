@@ -25,7 +25,7 @@
         <a href="#">Home</a>
         <a href="../View/Customer/create_service_request.php">Create Service Request</a>
         <a href="../Controller/myservicerequestcontroller.php">My Service Requests</a>
-        <a href="#">Profile</a>
+        <a href="../Controller/userupdatecontroller.php">Profile</a>
         <a href="../Controller/logoutcontroller.php">Logout</a>
     </div>
  

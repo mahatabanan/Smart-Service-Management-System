@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if($status){
 
         sleep("2");
-        header("Location: admindashboardcontroller.php");
+        header("Location: customerdashboardcontroller.php");
         exit();
     } else {
         echo "Update Failed!";

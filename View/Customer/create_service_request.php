@@ -199,9 +199,9 @@ button:hover{
                 <h4><label for="preferred_time">Preferred Time</label></h4>
                 <select id="preferred_time" name="preferred_time" required>
                     <option value="">Select time</option>
-                    <option value="Morning">Morning (9AM – 12PM)</option>
-                    <option value="Afternoon">Afternoon (12PM – 4PM)</option>
-                    <option value="Evening">Evening (4PM – 8PM)</option>
+                    <option value="Morning (9AM – 12PM)">Morning (9AM – 12PM)</option>
+                    <option value="Afternoon (12PM – 4PM)">Afternoon (12PM – 4PM)</option>
+                    <option value="Evening (4PM – 8PM)">Evening (4PM – 8PM)</option>
                 </select>
 
                 <small id="timeError" class="error"></small>
