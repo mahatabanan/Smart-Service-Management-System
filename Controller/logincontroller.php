@@ -29,7 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($user['role'] === 'admin') {
         header("Location: admindashboardcontroller.php");
     } elseif ($user['role'] === 'manager') {
-        header("Location: ../manager_dashboard.php");
+
+
+     // roll as a manager hisab e dhore se controller er kace jabe and manager dashboard view dekhabe 
+        header("Location: managerdashboardcontroller.php");
+
+       
     } else {
         header("Location: customerdashboardcontroller.php");
     }
