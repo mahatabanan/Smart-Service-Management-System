@@ -155,6 +155,31 @@ function deleterequest($requestid)
 
 
 
+   // add worker 
 
+
+
+   // 1. new korker insert function 
+function insertWorker($name, $skills, $phone) {
+    global $conn;
+    $sql = "INSERT INTO worker_info_tabel (workername, workerskills, workerphone) 
+            VALUES ('$name', '$skills', '$phone')";
+    return mysqli_query($conn, $sql);
+}
+
+//  see th worker 
+function getAllWorkers() {
+    global $conn;
+    $sql = "SELECT * FROM worker_info_tabel";
+    $result = mysqli_query($conn, $sql);
+    return $result;
+}
+
+// delete worker by id 
+function deleteWorker($wid) {
+    global $conn;
+    $sql = "DELETE FROM worker_info_tabel WHERE wid = '$wid'";
+    return mysqli_query($conn, $sql);
+}
 
 ?>

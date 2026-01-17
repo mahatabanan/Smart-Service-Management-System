@@ -29,3 +29,4 @@ $completedRequests  = countCompletedRequests();
 /* Load dashboard view */
 require "../View/Manager/manager_dashboard.php";
 
+?>
