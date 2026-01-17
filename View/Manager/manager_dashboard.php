@@ -133,7 +133,7 @@ body {
             <a href="#" class="active">Home</a>
             <a href="http://localhost/SMART-SERVICE-MANAGEMENT-SYSTEM/View/Manager/manage_worker.php">Add Worker</a>
 
-            <a href="#">View Service Requests</a>
+            <a href="http://localhost/SMART-SERVICE-MANAGEMENT-SYSTEM/View/Manager/view_service_request.php">View Service Requests</a>
             <a href="../Controller/userupdatecontroller.php">Profile</a>
             <a href="../Controller/logoutcontroller.php">Logout</a>
         </div>

@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $time,
         $urgency,
         $status,
-        $woker
+        $worker
     );
 
     if ($statusInsert) {

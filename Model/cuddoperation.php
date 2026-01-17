@@ -182,4 +182,41 @@ function deleteWorker($wid) {
     return mysqli_query($conn, $sql);
 }
 
+
+
+
+// mamager dashboard  view all request er jonno 
+
+
+// Sob request anar jonno
+
+
+function getAllServiceRequests() {
+    global $conn;
+    $sql = "SELECT * FROM servicerequest";
+    return mysqli_query($conn, $sql);
+}
+
+// ২. টেবিলের ড্রপডাউন ডাটা: সব ওয়ার্কারের ডিটেইলস (নাম, ফোন, স্কিল) আনার জন্য
+function fetchAllWorkers() {
+    global $conn;
+    $sql = "SELECT * FROM worker_info_tabel";
+    return mysqli_query($conn, $sql);
+}
+
+// ৩. টেবিলের অ্যাকশন: ম্যানেজার যখন ওয়ার্কার এবং চার্জ লিখে 'Assign' বাটনে ক্লিক করবে
+function updateManagerAssignment($requestid, $workername, $service_charge) {
+    global $conn;
+    
+    
+    $sql = "UPDATE servicerequest 
+            SET worker = '$workername', 
+                service_charge = '$service_charge', 
+                status = 'Accepted' 
+            WHERE requestid = '$requestid'"; 
+            
+    return mysqli_query($conn, $sql);
+}
+
+
 ?>
