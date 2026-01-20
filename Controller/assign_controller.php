@@ -13,11 +13,11 @@ if (isset($_POST['update_btn'])) {
     
     // Form theke data gulo variable-e rakha hocche
     $requestid = $_POST['requestid'];
-    $wid = $_POST['wid'];
+    $workername = $_POST['workername'];
     $service_charge = $_POST['service_charge'];
 
     // Model-er function call kore database update kora hocche
-    $result = updateManagerAssignment($requestid, $wid, $service_charge);
+    $result = updateManagerAssignment($requestid, $workername, $service_charge);
 
     if ($result) {
         // Update hoye gele abar Manager page-ei firot jabe
