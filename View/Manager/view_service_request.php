@@ -156,16 +156,9 @@
                 <th>Urgency</th>
                 <th>Status</th>
                 <th>Action (Assign)</th>
-<<<<<<< Updated upstream
-                <th>Action (Delete) </th> </tr>
+            </tr>
         </thead>
         <tbody>
-=======
-                <th>Action (Delete)</th>
-            </tr>
-       
-        
->>>>>>> Stashed changes
             <?php 
             if(mysqli_num_rows($allRequests) > 0) {
                 while($row = mysqli_fetch_assoc($allRequests)) { 
@@ -212,17 +205,6 @@
                             </div>
                         <?php } ?>
                     </td>
-<<<<<<< Updated upstream
-                
-=======
-                    <td>
-                        <a href="../Controller/servicerequestdeletecontroller.php?requestid=<?= $row['requestid'] ?>" 
-                   class="delete-btn" onclick="return confirm('Are you sure?')">
-                   Delete
-                </a>
-                    </td>
-
->>>>>>> Stashed changes
                 </tr>
             <?php 
                 } 
