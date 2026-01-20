@@ -126,15 +126,28 @@
             display: block;
             color: #005f7a;
         }
+
+         .delete-btn {
+            color: #fff;
+            background: #dc3545;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .delete-btn:hover {
+            background: #b52a37;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>Manager Dashboard</h2>
+    <h2>All Requests</h2>
 
     <table>
-        <thead>
+        
             <tr>
                 <th>Customer Info</th>
                 <th>Service Type</th>
@@ -143,9 +156,16 @@
                 <th>Urgency</th>
                 <th>Status</th>
                 <th>Action (Assign)</th>
+<<<<<<< Updated upstream
                 <th>Action (Delete) </th> </tr>
         </thead>
         <tbody>
+=======
+                <th>Action (Delete)</th>
+            </tr>
+       
+        
+>>>>>>> Stashed changes
             <?php 
             if(mysqli_num_rows($allRequests) > 0) {
                 while($row = mysqli_fetch_assoc($allRequests)) { 
@@ -178,13 +198,11 @@
                                     <option value="">Select Worker</option>
                                     <?php 
                                     foreach($workerList as $worker) { 
-                                       echo "<option value='".$worker['wid']."'>".$worker['workername']."---> ".$worker['workerskills']."</option>";
+                                       echo "<option value='"." Name:".$worker['workername']." Phone no: " .$worker['workerphone']."'>".$worker['workername']."  ".$worker['workerskills']."</option>";
                                     } 
                                     ?>
                                 </select>
-                                
                                 <input type="number" name="service_charge" placeholder="Amount (TK)" required>
-                                
                                 <button type="submit" name="update_btn" class="btn-assign">Assign</button>
                             </form>
                         <?php } else { ?>
@@ -194,7 +212,17 @@
                             </div>
                         <?php } ?>
                     </td>
+<<<<<<< Updated upstream
                 
+=======
+                    <td>
+                        <a href="../Controller/servicerequestdeletecontroller.php?requestid=<?= $row['requestid'] ?>" 
+                   class="delete-btn" onclick="return confirm('Are you sure?')">
+                   Delete
+                </a>
+                    </td>
+
+>>>>>>> Stashed changes
                 </tr>
             <?php 
                 } 
@@ -202,7 +230,7 @@
                 echo "<tr><td colspan='8' style='text-align:center;'>No records found!</td></tr>";
             }
             ?>
-        </tbody>
+        
     </table>
 </div>
 
