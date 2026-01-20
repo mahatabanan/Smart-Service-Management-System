@@ -3,6 +3,13 @@ session_start();
 
 // মডেল ফাইলের সঠিক পাথ
 include "../Model/cuddoperation.php"; 
+if (!isset($_SESSION['mobile']) || $_SESSION['role'] !== 'manager') {
+    header("Location: ../View/login.html");
+    exit();
+}
+require_once "../Model/cuddoperation.php";
+$result = getAllWorkers(); 
+include "../View/Manager/manage_worker.php";
 
 if (isset($_POST['add_worker'])) {
 
@@ -22,8 +29,10 @@ if (isset($_POST['add_worker'])) {
 
     if ($status) {
         // সফল হলে ভিউ পেজে ফেরত পাঠানো
-        header("Location: ../View/Manager/manage_worker.php?success=1");
-        exit();
+          echo "<script>
+                alert('Worker added successfully!');
+                window.location.href='addworkercontroller.php';
+              </script>";
     } else {
         echo "Worker insert failed!";
     }

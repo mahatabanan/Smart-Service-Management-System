@@ -2,7 +2,7 @@
 
   <?php
 session_start();
-include "../Model/cuddoperation.php"; // মডেল ফাইল ইনক্লুড করা
+require "../Model/cuddoperation.php"; // মডেল ফাইল ইনক্লুড করা
 
 /* Access control */
 if (!isset($_SESSION['mobile']) || $_SESSION['role'] !== 'manager') {
@@ -19,7 +19,10 @@ if (isset($_GET['wid'])) {
 
     if ($status) {
         // ডিলিট হওয়ার পর ভিউ পেজে ফেরত পাঠানো
-        header("Location: ../View/Manager/manage_worker.php?msg=deleted");
+        echo "<script>
+                alert('Worker Deleted successfully!');
+                window.location.href='addworkercontroller.php';
+              </script>";
         exit();
     } else {
         echo "Error: Delete failed!";

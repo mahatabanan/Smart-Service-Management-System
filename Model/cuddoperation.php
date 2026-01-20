@@ -60,8 +60,12 @@ function insertcustomer($name,$password,$mobile,$address,$role)
     global $conn;
     $sql = "INSERT INTO users (name, mobile, password, address,role)
     VALUES ('$name', '$mobile', '$password', '$address','$role')";
-    $result=mysqli_query($conn,$sql);
-    return $result;
+    mysqli_query($conn,$sql);
+    if (mysqli_affected_rows($conn) > 0) {
+        return true;   // mobile found & updated
+    } else {
+        return false;  // wrong mobile OR no change
+    }
 
 }
 
@@ -71,8 +75,12 @@ function insertmanager($name,$password,$mobile,$address,$role)
     global $conn;
     $sql = "INSERT INTO users (name, mobile, password, address,role)
     VALUES ('$name', '$mobile', '$password', '$address','$role')";
-    $result=mysqli_query($conn,$sql);
-    return $result;
+    mysqli_query($conn,$sql);
+    if (mysqli_affected_rows($conn) > 0) {
+        return true;   // mobile found & updated
+    } else {
+        return false;  // wrong mobile OR no change
+    }
 
 } 
 
@@ -97,7 +105,12 @@ function insertservicerequest(
             VALUES
             ('$mobile', '$fullname', '$servicetype', '$serviceaddress', '$description', '$date', '$time', '$urgency', '$status','$worker')";
 
-    return mysqli_query($conn, $sql);
+     mysqli_query($conn, $sql);
+     if (mysqli_affected_rows($conn) > 0) {
+        return true;   // mobile found & updated
+    } else {
+        return false;  // wrong mobile OR no change
+    }
 }
 
 function getallfromservicereq($mobile)
@@ -129,7 +142,12 @@ function deleterequest($requestid)
     global $conn;
     $sql = "DELETE FROM servicerequest WHERE requestid='$requestid'";
     
-    return mysqli_query($conn, $sql);
+     mysqli_query($conn, $sql);
+     if (mysqli_affected_rows($conn) > 0) {
+        return true;   // mobile found & updated
+    } else {
+        return false;  // wrong mobile OR no change
+    }
 }
 
 
@@ -174,7 +192,12 @@ function insertWorker($name, $skills, $phone) {
     global $conn;
     $sql = "INSERT INTO worker_info_tabel (workername, workerskills, workerphone) 
             VALUES ('$name', '$skills', '$phone')";
-    return mysqli_query($conn, $sql);
+    mysqli_query($conn, $sql);
+    if (mysqli_affected_rows($conn) > 0) {
+        return true;   // mobile found & updated
+    } else {
+        return false;  // wrong mobile OR no change
+    }
 }
 
 //  see th worker 
@@ -189,7 +212,12 @@ function getAllWorkers() {
 function deleteWorker($wid) {
     global $conn;
     $sql = "DELETE FROM worker_info_tabel WHERE wid = '$wid'";
-    return mysqli_query($conn, $sql);
+    mysqli_query($conn, $sql);
+    if (mysqli_affected_rows($conn) > 0) {
+        return true;   // mobile found & updated
+    } else {
+        return false;  // wrong mobile OR no change
+    }
 }
 
 
@@ -215,17 +243,22 @@ function fetchAllWorkers() {
 }
 
 // ৩. টেবিলের অ্যাকশন: ম্যানেজার যখন ওয়ার্কার এবং চার্জ লিখে 'Assign' বাটনে ক্লিক করবে
-function updateManagerAssignment($requestid, $workername, $service_charge) {
+function updateManagerAssignment($requestid, $wid, $service_charge) {
     global $conn;
     
     
     $sql = "UPDATE servicerequest 
-            SET worker = '$workername', 
+            SET worker = '$wid', 
                 service_charge = '$service_charge', 
                 status = 'Accepted' 
             WHERE requestid = '$requestid'"; 
             
-    return mysqli_query($conn, $sql);
+     mysqli_query($conn, $sql);
+    if (mysqli_affected_rows($conn) > 0) {
+        return true;   // mobile found & password updated
+    } else {
+        return false;  // mobile not found OR no change
+    }
 }
 
 function totalrevenue()
