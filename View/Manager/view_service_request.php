@@ -156,6 +156,7 @@
                 <th>Urgency</th>
                 <th>Status</th>
                 <th>Action (Assign)</th>
+                <th>Action (Delete)</th>
             </tr>
         </thead>
         <tbody>
@@ -205,6 +206,13 @@
                             </div>
                         <?php } ?>
                     </td>
+                    <td>
+                <a class="btn-delete"
+                   href="../Controller/requestdeletecontroller.php?requestid=<?= $row['requestid']; ?>"
+                   onclick="return confirm('Are you sure?');">
+                    Delete
+                </a>
+            </td>
                 </tr>
             <?php 
                 } 
