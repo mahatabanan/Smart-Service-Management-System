@@ -24,7 +24,6 @@
             color: #333;
         }
 
-        /* 2. Container Style */
         .container { 
             width: 98%; 
             margin: auto; 
@@ -43,7 +42,6 @@
             letter-spacing: 1px;
         }
 
-        /* 3. Table Styling */
         table { 
             width: 100%; 
             border-collapse: collapse; 
@@ -72,7 +70,6 @@
             background-color: #f1f8fa;
         }
 
-        /* 4. Form & Input Elements */
         .assign-form { 
             display: flex; 
             flex-direction: column; 
@@ -84,15 +81,8 @@
             padding: 8px; 
             border: 1px solid #ccc; 
             border-radius: 5px; 
-            outline: none;
-            transition: border 0.3s;
         }
 
-        select:focus, input[type="number"]:focus {
-            border-color: #005f7a;
-        }
-
-        /* 5. Button Styles */
         .btn-assign { 
             background-color: #27ae60; 
             color: white; 
@@ -101,14 +91,24 @@
             border-radius: 5px; 
             cursor: pointer; 
             font-weight: 600;
-            transition: background 0.3s;
         }
 
-        .btn-assign:hover { 
-            background-color: #219150; 
+        /* ডিলিট বাটনের জন্য নতুন স্টাইল */
+        .btn-delete {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
         }
 
-        /* 6. Status Badges */
+        .btn-delete:hover {
+            background-color: #c0392b;
+        }
+
         .status-badge { 
             padding: 6px 10px; 
             border-radius: 20px; 
@@ -118,15 +118,9 @@
             text-transform: uppercase;
         }
 
-        .pending { 
-            background-color: #f39c12; 
-        }
+        .pending { background-color: #f39c12; }
+        .accepted { background-color: #2ecc71; }
 
-        .accepted { 
-            background-color: #2ecc71; 
-        }
-
-        /* Helper for Customer Info */
         .cust-name {
             font-weight: bold;
             display: block;
@@ -149,7 +143,7 @@
                 <th>Urgency</th>
                 <th>Status</th>
                 <th>Action (Assign)</th>
-            </tr>
+                <th>Action (Delete) </th> </tr>
         </thead>
         <tbody>
             <?php 
@@ -200,11 +194,12 @@
                             </div>
                         <?php } ?>
                     </td>
+                
                 </tr>
             <?php 
                 } 
             } else {
-                echo "<tr><td colspan='7' style='text-align:center;'>No records found!</td></tr>";
+                echo "<tr><td colspan='8' style='text-align:center;'>No records found!</td></tr>";
             }
             ?>
         </tbody>
