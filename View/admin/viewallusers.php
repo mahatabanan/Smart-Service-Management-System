@@ -59,6 +59,10 @@
          padding: 30px; 
         border-radius: 10px;
           box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
+
+          .container tr:hover td {
+    background: #e0f2fe;
+}
     </style>
 </head>
 <body>

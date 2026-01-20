@@ -37,6 +37,16 @@ function getAllUsers()
 
 }
 
+
+function getAllmanager()
+{
+    global $conn;
+    $sql = "SELECT * FROM users where role='manager'";
+    $result= mysqli_query($conn, $sql);
+    return $result;
+
+}
+
 function deleteUserByMobile($mobile)
 {
     global $conn;
@@ -216,6 +226,23 @@ function updateManagerAssignment($requestid, $workername, $service_charge) {
             WHERE requestid = '$requestid'"; 
             
     return mysqli_query($conn, $sql);
+}
+
+function totalrevenue()
+{   global $conn;
+    $sql = "SELECT SUM(service_charge) AS total_revenue FROM servicerequest";
+    $result = mysqli_query($conn, $sql);
+    $data = mysqli_fetch_assoc($result);
+    return $data['total_revenue'];
+
+}
+
+function countAllWorkers() {
+    global $conn;
+    $sql = "SELECT COUNT(*) AS total_woker FROM worker_info_tabel;";
+    $result = mysqli_query($conn, $sql);
+    $row=mysqli_fetch_assoc($result);
+    return $row['total_woker'];
 }
 
 

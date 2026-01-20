@@ -101,16 +101,5 @@ body {
     background-color: #026F96;
 }
 
-/* RESPONSIVE */
-/*@media (max-width: 768px) {
-    .dashboard-container {
-        flex-direction: column;
-    }
 
-    .sidebar {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #E5E7EB;
-    }
-}
-    */
+    

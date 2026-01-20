@@ -22,14 +22,10 @@
         <div class="logo"><img src="../View/logo/logo.png" height=130 width=150></div>
 
         <a href="../Controller/admindashboardcontroller.php">HOME</a>
-
-        <?php if ($user['role'] == 'admin'): ?>
-            <a href="../Controller/addmanagercontroller.php">+ Add Manager</a>
-        <?php endif; ?>
-
-        <a href="#">Service Categories</a>
-        <a href="../Controller/viewuserscontroller.php">View Users</a>
-        <a href="../Controller/userupdatecontroller.php">Profile Update</a>
+        <a href="../Controller/addmanagercontroller.php">+ Add Manager</a>
+        <a href="../Controller/inspectcontroller.php">Inspect !</a>
+        <a href="../Controller/viewuserscontroller.php">View All Users</a>
+        <a href="../Controller/userupdatecontroller.php">Update Profile </a>
         <a href="../Controller/logoutcontroller.php">Logout</a>
     </div>
 
