@@ -144,9 +144,6 @@
         </tr>
 
         <?php 
-        require_once "../../Model/cuddoperation.php";
-        $result = getAllWorkers(); 
-
         if ($result && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
@@ -155,7 +152,7 @@
                     <td><?= $row['workerphone'] ?></td>
                     <td><?= $row['workerskills'] ?></td>
                     <td>
-                        <a href="../../Controller/workerdelete.php?wid=<?= $row['wid'] ?>" 
+                        <a href="../Controller/workerdelete.php?wid=<?= $row['wid'] ?>" 
                    class="delete-btn" onclick="return confirm('Are you sure?')">
                    Delete
                 </a>

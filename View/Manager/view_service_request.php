@@ -1,6 +1,6 @@
 <?php 
 // Controller load kora hocche jate data pawa jay
-require_once "../../Controller/view_service_request_controller.php"; 
+//require_once "../../Controller/view_service_request_controller.php"; 
 ?>
 
 <!DOCTYPE html>
@@ -170,20 +170,21 @@ require_once "../../Controller/view_service_request_controller.php";
                         </strong>
                     </td>
                     <td>
-                        <span class="status-badge <?= ($row['status'] == 'Accepted') ? 'accepted' : 'pending'; ?>">
+                        <span class="status-badge 
+                        <?= ($row['status'] == 'Accepted') ? 'accepted' : 'pending'; ?>">
                             <?= $row['status']; ?>
                         </span>
                     </td>
                     <td>
                         <?php if($row['status'] !== 'Accepted') { ?>
-                            <form action="../../Controller/assign_controller.php" method="POST" class="assign-form">
+                            <form action="../Controller/assign_controller.php" method="POST" class="assign-form">
                                 <input type="hidden" name="requestid" value="<?= $row['requestid']; ?>">
                                 
                                 <select name="workername" required>
                                     <option value="">Select Worker</option>
                                     <?php 
                                     foreach($workerList as $worker) { 
-                                        echo "<option value='".$worker['workername']."'>".$worker['workername']."</option>";
+                                       echo "<option value='".$worker['wid']."'>".$worker['workername']."---> ".$worker['workerskills']."</option>";
                                     } 
                                     ?>
                                 </select>
