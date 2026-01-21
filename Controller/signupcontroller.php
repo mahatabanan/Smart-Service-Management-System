@@ -12,21 +12,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $address  = $_POST['address'] ?? '';
     $role     = "customer";
 
-    // 1️⃣ Check if user already exists by mobile
+    //  Check if user already exists by mobile
     $user = getUserByMobile($mobile);
 
     if ($user !== null) {
         echo "Mobile Number is already taken!";
-        exit(); // ⛔ stop execution here
+        exit(); //  stop execution here
     }
 
-    // 2️⃣ Basic validation
+    //  Basic validation
     if ($name === '' || $password === '' || $mobile === '' || $address === '') {
         echo "All fields are required!";
         exit();
     }
 
-    // 3️⃣ Insert new customer
+    //  Insert new customer
     $status = insertcustomer($name, $password, $mobile, $address, $role);
 
     if ($status) {
