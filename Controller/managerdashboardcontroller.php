@@ -16,7 +16,7 @@ $mobile = $_SESSION['mobile'];
 $user = getUserByMobile($mobile);
 
 
-// it  $count   count the customer    and eta coddopation.php  theke nawa 
+
 //eta tokon e customer count dekhate perbe jokon  session is ok 
   $count = countCustomers();
 

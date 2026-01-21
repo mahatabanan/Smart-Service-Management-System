@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// মডেল ফাইলের সঠিক পাথ
+
 include "../Model/cuddoperation.php"; 
 if (!isset($_SESSION['mobile']) || $_SESSION['role'] !== 'manager') {
     header("Location: ../View/login.html");
@@ -24,11 +24,11 @@ if (isset($_POST['add_worker'])) {
 
     $skillString = implode(", ", $skills);
 
-    // ডাটাবেস ফাংশন কল
+    
     $status = insertWorker($name, $skillString, $phone);
 
     if ($status) {
-        // সফল হলে ভিউ পেজে ফেরত পাঠানো
+        
           echo "<script>
                 alert('Worker added successfully!');
                 window.location.href='addworkercontroller.php';
