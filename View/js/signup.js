@@ -36,7 +36,4 @@ function validateForm() {
         return false;
     }
  
-    // All validation passed
-    alert("Registration successful");
-    return true;
 }

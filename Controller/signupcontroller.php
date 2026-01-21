@@ -1,33 +1,43 @@
 <?php
+session_start();
 
- require "../Model/cuddoperation.php";
+require "../Model/cuddoperation.php";
+require "../Model/user.php";
 
-// form submit হলে এই অংশ কাজ করবে
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $name     = $_POST['name'];
-    $password = $_POST['password'];
-    $mobile   = $_POST['phone'];   // form field
-    $address  = $_POST['address'];
-    $role="customer";
+    $name     = $_POST['name'] ?? '';
+    $password = $_POST['password'] ?? '';
+    $mobile   = $_POST['phone'] ?? '';
+    $address  = $_POST['address'] ?? '';
+    $role     = "customer";
 
-    // basic server-side validation
-   if ($name != "" && $password != "" && $mobile != "" && $address != "") {
+    // 1️⃣ Check if user already exists by mobile
+    $user = getUserByMobile($mobile);
 
-        $status=insertcustomer($name,$password,$mobile,$address,$role);
-        sleep("3");
-        if ($status) {
-            
-            header("Location:../View/login.html");
+    if ($user !== null) {
+        echo "Mobile Number is already taken!";
+        exit(); // ⛔ stop execution here
+    }
 
-          
-        } 
-        else {
-            $error = "Registration failed!";
-        }
+    // 2️⃣ Basic validation
+    if ($name === '' || $password === '' || $mobile === '' || $address === '') {
+        echo "All fields are required!";
+        exit();
+    }
 
+    // 3️⃣ Insert new customer
+    $status = insertcustomer($name, $password, $mobile, $address, $role);
+
+    if ($status) {
+       echo "<script>
+            alert('Registration Successful!');
+            window.location.href='../View/login.html';
+          </script>";
+    exit();
     } else {
-        $error = "All fields are required!";
+        echo "Registration failed!";
+        exit();
     }
 }
 ?>
