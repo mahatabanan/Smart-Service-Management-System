@@ -102,18 +102,67 @@ body {
 }
 
 
-    
-/* Desktop */
-@media (min-width: 1025px) {
-  .sidebar {
-    width: 250px;
-  }
-}
+/* ========================= */
+/* MOBILE – ALL PHONE TYPES */
+/* ========================= */
+@media (max-width: 767px) {
 
-/* Tablet */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .sidebar {
-    width: 220px;
-    position: fixed;
-  }
+    /* Top header */
+    .top-header {
+        width: auto;
+        margin: 12px;
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    /* Dashboard layout */
+    .dashboard-container {
+        flex-direction: column;
+        margin: 10px;
+        border-radius: 10px;
+        min-height: auto;
+    }
+
+    /* Sidebar → top menu */
+    .sidebar {
+        width: 100%;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #E5E7EB;
+        padding: 14px;
+        border-radius: 10px 10px 0 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Sidebar links */
+    .sidebar a {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* Main content */
+    .main-content {
+        padding: 20px 16px;
+    }
+
+    .main-content h2 {
+        font-size: 20px;
+    }
+
+    .main-content p {
+        font-size: 14px;
+    }
+
+    /* Buttons */
+    .btn-primary {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
 }
