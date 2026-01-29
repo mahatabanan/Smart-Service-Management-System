@@ -131,7 +131,7 @@ body {
             </div>
 
             <a href="#" class="active">Home</a>
-            <a href="http:../Controller/addworkercontroller.php">Add Worker</a>
+            <a href="../Controller/addworkercontroller.php">Add Worker</a>
             <a href="../Controller/view_service_request_controller.php">View Service Requests</a>
             <a href="../Controller/userupdatecontroller.php">Profile</a>
             <a href="../Controller/logoutcontroller.php">Logout</a>

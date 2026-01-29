@@ -103,3 +103,17 @@ body {
 
 
     
+/* Desktop */
+@media (min-width: 1025px) {
+  .sidebar {
+    width: 250px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+    position: fixed;
+  }
+}

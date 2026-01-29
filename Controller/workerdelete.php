@@ -1,5 +1,4 @@
 
-
   <?php
 session_start();
 require "../Model/cuddoperation.php"; // মডেল ফাইল ইনক্লুড করা
@@ -14,11 +13,11 @@ if (!isset($_SESSION['mobile']) || $_SESSION['role'] !== 'manager') {
 if (isset($_GET['wid'])) {
     $wid = $_GET['wid'];
     
-    // মডেল থেকে ডিলিট ফাংশন কল করা
+  
     $status = deleteWorker($wid);
 
     if ($status) {
-        // ডিলিট হওয়ার পর ভিউ পেজে ফেরত পাঠানো
+      
         echo "<script>
                 alert('Worker Deleted successfully!');
                 window.location.href='addworkercontroller.php';
